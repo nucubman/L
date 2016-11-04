@@ -1,0 +1,85 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int isprime(int number) {
+	int k = 2;
+	int i = 1;
+
+	while (k <= number / 2) {
+		if (number % k == 0) {
+			i = 0;
+			break;
+		}
+		k++;
+	}
+
+	return i;
+}
+
+
+
+
+main() {
+	int m[100];
+	int i = 0;
+
+	while (i < 100) {
+		int r = rand() % 100;
+		printf("%02d ", r);
+		int p = isprime(r);
+		if (p == 1) {
+			m[i] = r;
+			i++;
+		}
+	}
+
+	printf("\n\n");
+
+	for (int i = 0; i < 100; i++) {
+		printf("%02d ", m[i]);
+	}
+
+	i = 0;
+	int min = 1000;
+	int max = 0;
+	int *lp;
+	int *up;
+
+
+	for (i = 0; i < 100; i++) {
+		m[i] = rand() % 1000;
+	}
+	 
+	for (i = 0; i < 100; i++) {
+		if (m[i] > max) {
+			max = m[i];
+			lp = &m[i];
+		}
+		if (m[i] < min) {
+			min = m[i];
+			up = &m[i];
+		}
+	}
+
+
+	for (int i = 0; i < 100; i++) {
+		printf("%03d ", m[i]);
+	}
+
+	printf("\n\n");
+	printf("min: %03d, max: %03d", min, max);
+
+	
+	printf("\n\n");
+
+	printf("%d - %d \n ", up, lp);
+
+	
+
+	
+	getchar();
+}
+
+avigot 100 elementiani masivi sheavset shemxteviti martivi ricxvebit , ipovet minimaluri da maximaluri da am minimaluris da maximaluris misamartebi
